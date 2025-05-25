@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Analiza kodu z Gemini</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+<div class="container">
+<h1>Analiza kodu – Gemini AI</h1>
+
+<div class="section upload-section">
+<label for="fileInput">Wczytaj plik z kodem:</label>
+<input type="file" id="fileInput" accept=".txt,.js,.java,.py,.cpp,.cs" />
+</div>
+
+<div class="section textarea-section">
+<label for="codeInput">Lub wklej kod:</label>
+<textarea id="codeInput" placeholder="Wklej tutaj swój kod..."></textarea>
+</div>
+
+<div class="buttons">
+<p class="bold">Wybierz analizę jakości kodu:</p>
+<div class="btn-group">
+<button class="analysis-btn">SOLID</button>
+<button class="analysis-btn">OOP</button>
+<button class="analysis-btn">DRY</button>
+<button class="analysis-btn">KISS</button>
+<button class="analysis-btn">Prawo Demeter</button>
+<button class="analysis-btn">Code smell</button>
+<button class="analysis-btn">Wygeneruj testy</button>
+<button class="analysis-btn">Przypadki testowe</button>
+<button class="analysis-btn">Analiza pokrycia</button>
+<button class="analysis-btn">Udokumentuj kod</button>
+</div>
+</div>
+
+<div class="section prompt-section">
+<label for="customPrompt">Własna instrukcja:</label>
+<input type="text" id="customPrompt" placeholder="Np. Napisz testy jednostkowe do tego kodu" />
+</div>
+
+<button id="sendBtn">Wyślij do Gemini</button>
+
+<div class="section response-section">
+<h2>Odpowiedź Gemini:</h2>
+<textarea id="responseOutput" placeholder="Tutaj pojawi się odpowiedź od AI..."></textarea>
+
+<button id="downloadBtn">Pobierz odpowiedź</button>
+</div>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
